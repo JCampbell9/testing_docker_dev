@@ -24,3 +24,10 @@ RUN /bin/bash -c 'cd ~/infrastructure_ws/src; \
 # RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd ~/infrastructure_ws; catkin_make'
 
 RUN echo "source /root/infrastructure_ws/devel/setup.bash" >> ~/.bashrc
+
+
+RUN useradd -s /bin/bash -m vscode \
+ && groupadd docker \
+ && usermod -aG docker vscode
+
+USER vscode
